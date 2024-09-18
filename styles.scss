@@ -4,20 +4,172 @@
 
 /* Variables */
 
+// Colors
 $very-dark-magenta: hsl(300, 43%, 22%);
 $soft-pink: hsl(333, 80%, 67%);
 $dark-grayish-magenta: hsl(303, 10%, 53%);
 $light-grayish-magenta: hsl(300, 24%, 96%);
 $white: hsl(0, 0%, 100%);
 
+$card-wrapper-gap: 1rem;
+$card-border-radius: 10px;
+$section-gap: 3rem;
+
 /* Elements */
 
 body {
-    font-family: "League Spartan", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    min-height: 100dvh;
+    height: 100%;
+    margin: 0;
+    
+    font-family: "League Spartan", sans-serif;
+    
     background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
-    background-position: top center, bottom center;
+    background-position: top left, bottom right;
     background-repeat: no-repeat;
+    // background-size: contain;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: $section-gap;
+
+    width: 100%;
+}
+
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $section-gap;
+
+    height: 100%;
+    max-width: 20rem;
+
+    margin: 4rem 1rem;
+}
+
+.introduction {
+    /* Elements */
+
+    &__title {
+        text-align: center;
+
+        margin: 0 0 1rem 0;
+        padding: 0 1rem;
+
+        font-weight: 700;
+        
+        color: $very-dark-magenta;
+    }
+
+    &__description {
+        text-align: center;
+
+        margin: 0;
+        padding: 0 1rem;
+
+        font-size: 1rem;
+        font-weight: 500;
+
+        color: $dark-grayish-magenta;
+    }
+}
+
+.rating-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $card-wrapper-gap;
+}
+
+.rating-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    border-radius: $card-border-radius;
+    
+    background-color: $light-grayish-magenta;
+
+    /* Elements */
+
+    &__star-container {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    &__rating-source {
+        text-align: center;
+        margin: 0;
+
+        font-weight: 700;
+        
+        color: $very-dark-magenta;
+    }
+}
+
+.review-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $card-wrapper-gap;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 1rem 2rem;
+
+    border-radius: $card-border-radius;
+
+    background-color: $very-dark-magenta;
+    
+    /* Elements */
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__avatar {
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+
+    &__name-span {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin: 1rem;
+    }
+
+    &__name {
+        margin: 0;
+
+        color: $light-grayish-magenta;
+    }
+
+    &__verification-hint {
+        margin: 0;
+
+        color: $soft-pink;
+    }
+
+    &__text {
+        color: $light-grayish-magenta;
+    }
 }
 
 /* Attribution */
@@ -29,4 +181,94 @@ body {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* Queries */
+
+@media (min-width: 1200px) {
+    body {
+        background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+    }
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .layout-wrapper {
+        justify-content: center;
+        align-items: center;
+        
+        max-width: 70rem;
+
+        margin: auto 8vw;
+    }
+
+    .introduction {
+        width: 35%;
+
+        /* Elements */
+
+        &__title {
+            text-align: start;
+
+            font-size: 3rem;
+        }
+
+        &__description {
+            text-align: start;
+        }
+    }
+
+    .rating-card-wrapper {
+        width: 45%;
+    }
+
+    .rating-card {
+        flex-direction: row;
+
+        width: 24rem;
+        
+        /* Elements */
+
+        &:nth-child(1) {
+            align-self: flex-start;
+        }
+
+        &:nth-child(2) {
+            align-self: center;
+        }
+        
+        &:nth-child(3) {
+            align-self: flex-end;
+        }
+    }
+
+    .review-card-wrapper {
+        flex-direction: row;
+        gap: 2rem;
+
+        min-height: 15rem;
+    }
+
+    .review-card {
+        flex: 1;
+
+        min-height: 175px;
+        min-width: 250px;
+
+        /* Elements */
+
+        &:nth-child(1) {
+            align-self: flex-start;
+        }
+
+        &:nth-child(2) {
+            align-self: center;
+        }
+        
+        &:nth-child(3) {
+            align-self: flex-end;
+        }
+    }
 }
