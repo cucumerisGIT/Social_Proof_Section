@@ -73,6 +73,10 @@ header {
   flex-direction: row;
   gap: 0.5rem;
 }
+.rating-card__star {
+  height: 1rem;
+  aspect-ratio: 1/1;
+}
 .rating-card__rating-source {
   text-align: center;
   margin: 0;
@@ -144,7 +148,7 @@ header {
   .layout-wrapper {
     justify-content: center;
     align-items: center;
-    max-width: 70rem;
+    max-width: 80rem;
     margin: auto 8vw;
   }
   .introduction {
@@ -177,13 +181,12 @@ header {
   }
   .review-card-wrapper {
     flex-direction: row;
-    gap: 2rem;
     min-height: 15rem;
   }
   .review-card {
     flex: 1;
-    min-height: 175px;
-    min-width: 250px;
+    min-height: 12rem;
+    min-width: 12rem;
     /* Elements */
   }
   .review-card:nth-child(1) {

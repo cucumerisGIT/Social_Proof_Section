@@ -108,6 +108,11 @@ header {
         gap: 0.5rem;
     }
 
+    &__star {
+        height: 1rem;
+        aspect-ratio: 1 / 1;
+    }
+
     &__rating-source {
         text-align: center;
         margin: 0;
@@ -199,7 +204,7 @@ header {
         justify-content: center;
         align-items: center;
         
-        max-width: 70rem;
+        max-width: 80rem;
 
         margin: auto 8vw;
     }
@@ -246,7 +251,6 @@ header {
 
     .review-card-wrapper {
         flex-direction: row;
-        gap: 2rem;
 
         min-height: 15rem;
     }
@@ -254,8 +258,8 @@ header {
     .review-card {
         flex: 1;
 
-        min-height: 175px;
-        min-width: 250px;
+        min-height: 12rem;
+        min-width: 12rem;
 
         /* Elements */
 
