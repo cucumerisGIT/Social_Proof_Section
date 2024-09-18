@@ -15,6 +15,22 @@ $card-wrapper-gap: 1rem;
 $card-border-radius: 10px;
 $section-gap: 3rem;
 
+/* Mixins */
+
+@mixin card($align-items: center, $bg-color) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: $align-items;
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    border-radius: $card-border-radius;
+
+    background-color: $bg-color;
+}
+
 /* Elements */
 
 body {
@@ -88,17 +104,8 @@ header {
 }
 
 .rating-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-    padding: 1rem;
-
-    border-radius: $card-border-radius;
+    @include card(center, $light-grayish-magenta);
     
-    background-color: $light-grayish-magenta;
 
     /* Elements */
 
@@ -130,15 +137,7 @@ header {
 }
 
 .review-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    padding: 1rem 2rem;
-
-    border-radius: $card-border-radius;
-
-    background-color: $very-dark-magenta;
+    @include card(initial, $very-dark-magenta);
     
     /* Elements */
 
